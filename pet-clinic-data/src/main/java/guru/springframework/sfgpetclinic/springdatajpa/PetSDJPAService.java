@@ -6,45 +6,45 @@ import java.util.Set;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import guru.springframework.sfgpetclinic.model.PetType;
-import guru.springframework.sfgpetclinic.repositories.PetTypeRepository;
-import guru.springframework.sfgpetclinic.services.PetTypeService;
+import guru.springframework.sfgpetclinic.model.Pet;
+import guru.springframework.sfgpetclinic.repositories.PetRepository;
+import guru.springframework.sfgpetclinic.services.PetService;
 
 @Service
 @Profile("springdatajpa")
-public class PetSDJPAService implements PetTypeService{
+public class PetSDJPAService implements PetService {
 	
-	private final PetTypeRepository petTypeRepository;
-
-	public PetSDJPAService(PetTypeRepository petTypeRepository) {
+	private final PetRepository petRepository;
+	
+	public PetSDJPAService(PetRepository petRepository) {
 		super();
-		this.petTypeRepository = petTypeRepository;
-	}
-	
-	@Override
-	public Set<PetType> findAll() {
-		Set<PetType> petTypes = new HashSet<>();
-		petTypeRepository.findAll().forEach(petTypes::add);
-		return petTypes;
+		this.petRepository = petRepository;
 	}
 
 	@Override
-	public PetType findById(Long id) {
-		return petTypeRepository.findById(id).orElse(null);
+	public Set<Pet> findAll() {
+		Set<Pet> pets = new HashSet<>();
+		petRepository.findAll().forEach(pets::add);
+		return pets;
 	}
 
 	@Override
-	public PetType save(PetType object) {
-		return petTypeRepository.save(object);
+	public Pet findById(Long id) {
+		return petRepository.findById(id).orElse(null);
 	}
 
 	@Override
-	public void delete(PetType object) {
-		petTypeRepository.delete(object);
+	public Pet save(Pet object) {
+		return petRepository.save(object);
+	}
+
+	@Override
+	public void delete(Pet object) {
+		petRepository.delete(object);
 	}
 
 	@Override
 	public void deleteById(Long id) {
-		petTypeRepository.deleteById(id);
+		petRepository.deleteById(id);
 	}
 }
