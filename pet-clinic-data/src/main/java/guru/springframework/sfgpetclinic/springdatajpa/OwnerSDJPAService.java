@@ -1,7 +1,6 @@
 package guru.springframework.sfgpetclinic.springdatajpa;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
