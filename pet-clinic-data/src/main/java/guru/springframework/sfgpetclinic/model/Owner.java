@@ -24,13 +24,14 @@ public class Owner extends Person {
 	private static final long serialVersionUID = 1L;
 
 	@Builder
-	public Owner(Long id, String firstName, String lastName, Set<Pet> pets, String address, String city, String telephone) {
-		super(firstName, lastName);
-		this.pets = pets;
-		this.address = address;
-		this.city = city;
-		this.telephone = telephone;
-	}
+    public Owner(Long id, String firstName, String lastName, String address, String city,
+                 String telephone, Set<Pet> pets) {
+        super(id, firstName, lastName);
+        this.address = address;
+        this.city = city;
+        this.telephone = telephone;
+        this.pets = pets;
+    }
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
 	private Set<Pet> pets = new HashSet<Pet>();
