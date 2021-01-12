@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.services.map;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
@@ -41,7 +42,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 			if (object.getPets() != null) {
 				object.getPets().forEach(pet -> {
 					if (pet.getPetType() != null) {
-						if (pet.getPetType().getId() != null) {
+						if (pet.getPetType().getId() == null) {
 							pet.setPetType(petTypeService.save(pet.getPetType()));
 						}
 					} else {
@@ -77,5 +78,10 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 				.filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
 				.findFirst()
 				.orElse(null);
+	}
+
+	@Override
+	public List<Owner> findAllByLastNameLike(String lastName) {
+		return null;
 	}
 }
