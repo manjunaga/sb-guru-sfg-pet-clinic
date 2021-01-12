@@ -20,7 +20,6 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 	private final PetTypeService petTypeService;
 
 	public OwnerMapService(PetTypeService petTypeService, PetService petService) {
-		super();
 		this.petTypeService = petTypeService;
 		this.petService = petService;
 	}

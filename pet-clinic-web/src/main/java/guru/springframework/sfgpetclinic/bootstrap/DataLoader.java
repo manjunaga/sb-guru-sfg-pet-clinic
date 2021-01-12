@@ -28,7 +28,6 @@ public class DataLoader implements CommandLineRunner {
 
 	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
 			SpecialityService specialityService, VisitService visitService) {
-		super();
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;

@@ -17,7 +17,6 @@ public class PetTypeSDJPAService implements PetTypeService{
 	private final PetTypeRepository petTypeRepository;
 
 	public PetTypeSDJPAService(PetTypeRepository petTypeRepository) {
-		super();
 		this.petTypeRepository = petTypeRepository;
 	}
 	

@@ -17,7 +17,6 @@ public class SpecialitySDJPAService implements SpecialityService {
 	private final SpecialityRepository specialityRepository;
 	
 	public SpecialitySDJPAService(SpecialityRepository specialityRepository) {
-		super();
 		this.specialityRepository = specialityRepository;
 	}
 	

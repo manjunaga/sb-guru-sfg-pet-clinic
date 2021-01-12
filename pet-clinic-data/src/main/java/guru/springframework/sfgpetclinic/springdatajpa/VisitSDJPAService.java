@@ -18,7 +18,6 @@ public class VisitSDJPAService implements VisitService {
 	private final VisitRepository visitRepository;
 	
 	public VisitSDJPAService(VisitRepository visitRepository) {
-		super();
 		this.visitRepository = visitRepository;
 	}
 	
