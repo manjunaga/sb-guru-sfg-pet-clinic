@@ -24,7 +24,7 @@ import lombok.Setter;
 public class Visit extends BaseEntity {
 
 	private static final long serialVersionUID = -875930165598690383L;
-	@Column(name = "data")
+    @Column(name = "date")
 	private LocalDate date;
 
 	@Column(name = "description")
@@ -33,5 +33,9 @@ public class Visit extends BaseEntity {
 	@ManyToOne
 	@JoinColumn(name = "pet_id")
 	private Pet pet;
+
+    public LocalDate getDate() {
+        return date;
+    }
 
 }
