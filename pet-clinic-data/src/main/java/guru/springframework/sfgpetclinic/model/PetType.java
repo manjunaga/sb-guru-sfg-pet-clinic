@@ -19,7 +19,7 @@ import lombok.Setter;
 public class PetType extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Builder
 	public PetType(Long id, String name) {
 		super(id);
